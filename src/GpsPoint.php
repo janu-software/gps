@@ -68,10 +68,10 @@ class Point
 	 * @author Jakub Vrána
 	 * @link   http://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
 	 *
-	 * @param  GpsPoint
+	 * @param  Point
 	 * @return float distance in metres
 	 */
-	public function getDistanceTo(GpsPoint $point)
+	public function getDistanceTo(Point $point)
 	{
 		return acos(
 			cos(deg2rad($this->lat))*cos(deg2rad($this->lng))*cos(deg2rad($point->lat))*cos(deg2rad($point->lng))
