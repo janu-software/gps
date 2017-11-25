@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace JCode\GPS;
 
@@ -17,8 +16,6 @@ class Point
 
 	/** @var string|null */
 	private $address;
-
-	const GREAT_CIRCLE_RADIUS = 6372.795;
 
 	/**
 	 * @param float|float[]
@@ -63,19 +60,29 @@ class Point
 	}
 
 	/**
-	 * Calculates distance of two GPS coordinates
+	 * @param \JCode\GPS\Point $point
+	 * @param string           $google_api_key
 	 *
-	 * @author Jakub Vrána
-	 * @link   http://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
-	 *
-	 * @param  Point
-	 * @return float distance in metres
+	 * @return float
 	 */
-	public function getDistanceTo(Point $point)
+	public function getDistanceTo(Point $point, string $google_api_key) : float
 	{
+		try {
+			$url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.str_replace(',', '.', $this->getLat()).','.str_replace(',', '.', $this->getLng()).'&destinations='.str_replace(',', '.', $point->getLat()).','.str_replace(',', '.', $point->getLng()).'&key='.$google_api_key;
+			$result = @file_get_contents($url);
+			$result = Nette\Utils\Json::decode($result);
+			if($result->status === 'OK' && $result->rows[0]->elements[0]->status === 'OK')
+				return (float) $result->rows[0]->elements[0]->distance->value;
+
+		} catch (Nette\Utils\JsonException $e) {}
+
+		/**
+		 * @author Jakub Vrána
+		 * @link   http://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
+		 */
 		return acos(
 			cos(deg2rad($this->lat))*cos(deg2rad($this->lng))*cos(deg2rad($point->lat))*cos(deg2rad($point->lng))
 			+ cos(deg2rad($this->lat))*sin(deg2rad($this->lng))*cos(deg2rad($point->lat))*sin(deg2rad($point->lng))
-			+ sin(deg2rad($this->lat))*sin(deg2rad($point->lat))) * self::GREAT_CIRCLE_RADIUS * 1000;
+			+ sin(deg2rad($this->lat))*sin(deg2rad($point->lat)))*Gps::GREAT_CIRCLE_RADIUS*1000;
 	}
 }
