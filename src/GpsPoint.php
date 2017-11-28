@@ -60,6 +60,14 @@ class Point
 	}
 
 	/**
+	 * @return string
+	 */
+	public function __toString() : string
+	{
+		return $this->getLat().', '.$this->getLng();
+	}
+
+	/**
 	 * @param \JCode\GPS\Point $point
 	 * @param string           $google_api_key
 	 *
