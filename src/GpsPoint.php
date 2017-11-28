@@ -64,7 +64,7 @@ class Point
 	 */
 	public function __toString() : string
 	{
-		return $this->getLat().', '.$this->getLng();
+		return str_replace(',', '.', $this->getLat()).','.str_replace(',', '.', $this->getLng());
 	}
 
 	/**
