@@ -9,5 +9,5 @@ class Gps
 {
 	use Nette\SmartObject;
 
-	const GREAT_CIRCLE_RADIUS = 6372.795;
+	public const GREAT_CIRCLE_RADIUS = 6372.795;
 }
