@@ -11,14 +11,14 @@
 	],
 	"require": {
 		"php": ">=7.1.0",
-		"nette/utils": "^2.4"
+		"nette/utils": "^2.4 || ^3.0"
 	},
 	"require-dev": {
 		"stanislav-janu/phpstan": "^0.11",
 		"nette/tester": "^2.1"
 	},
 	"conflict": {
-		"nette/nette": "<2.3"
+		"nette/utils": "<2.3"
 	},
 	"scripts": {
 		"t": "vendor/bin/tester tests",
