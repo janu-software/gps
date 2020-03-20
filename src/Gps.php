@@ -21,38 +21,43 @@ class Gps
 	 */
 	public static function exifCoordsToPoint(array $exif): GpsPoint
 	{
-		if (!isset($exif['GPSLatitude'])) {
+		$prefix = isset($exif['GPS:GPSLatitude']) ? 'GPS:' : '';
+
+		if (!isset($exif[$prefix . 'GPSLatitude'])) {
 			throw new GpsExifException('Missing parameter GPSLatitude.');
 		}
-		if (!isset($exif['GPSLatitudeRef'])) {
+		if (!isset($exif[$prefix . 'GPSLatitudeRef'])) {
 			throw new GpsExifException('Missing parameter GPSLatitudeRef.');
 		}
-		if (!isset($exif['GPSLongitude'])) {
+		if (!isset($exif[$prefix . 'GPSLongitude'])) {
 			throw new GpsExifException('Missing parameter GPSLongitude.');
 		}
-		if (!isset($exif['GPSLongitudeRef'])) {
+		if (!isset($exif[$prefix . 'GPSLongitudeRef'])) {
 			throw new GpsExifException('Missing parameter GPSLongitudeRef.');
 		}
 
-		return new GpsPoint(self::getGps($exif['GPSLatitude'], $exif['GPSLatitudeRef']), self::getGps($exif['GPSLongitude'], $exif['GPSLongitudeRef']));
+		return new GpsPoint(self::getGps($exif[$prefix . 'GPSLatitude'], $exif[$prefix . 'GPSLatitudeRef']), self::getGps($exif[$prefix . 'GPSLongitude'], $exif[$prefix . 'GPSLongitudeRef']));
 	}
 
 
 	/**
-	 * @param array  $exifCoord
+	 * @param array|float  $exifCoord
 	 * @param string $hemi
 	 *
 	 * @return float
 	 */
-	private static function getGps(array $exifCoord, string $hemi): float
+	private static function getGps($exifCoord, string $hemi): float
 	{
-		$degrees = count($exifCoord) > 0 ? self::gps2Num($exifCoord[0]) : 0;
-		$minutes = count($exifCoord) > 1 ? self::gps2Num($exifCoord[1]) : 0;
-		$seconds = count($exifCoord) > 2 ? self::gps2Num($exifCoord[2]) : 0;
-
 		$flip = ($hemi == 'W' or $hemi == 'S') ? -1 : 1;
+		if (is_array($exifCoord)) {
+			$degrees = count($exifCoord) > 0 ? self::gps2Num($exifCoord[0]) : 0;
+			$minutes = count($exifCoord) > 1 ? self::gps2Num($exifCoord[1]) : 0;
+			$seconds = count($exifCoord) > 2 ? self::gps2Num($exifCoord[2]) : 0;
 
-		return round($flip * ($degrees + $minutes / 60 + $seconds / 3600), 7);
+			return round($flip * ($degrees + $minutes / 60 + $seconds / 3600), 7);
+		} else {
+			return round($flip * $exifCoord, 7);
+		}
 	}
 
 
