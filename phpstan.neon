@@ -1,6 +1,7 @@
 parameters:
-	ignoreErrors:
-		- '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
+	level: max
+	paths:
+		- app
 
 includes:
 	- vendor/phpstan/phpstan-nette/rules.neon

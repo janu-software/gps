@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace JCode\GPS;
 
-class GpsPointException extends \Exception
+use Exception;
+class GpsPointException extends Exception
 {
 }

@@ -1,8 +1,6 @@
 language: php
 php:
-  - 7.1
-  - 7.2
-  - 7.3
+  - 8.0
 
 before_script:
     - pear config-set preferred_state beta
@@ -21,9 +19,9 @@ jobs:
 
     -   name: Nette Coding Standard
         install:
-          - travis_retry composer create-project nette/coding-standard temp/coding-standard ^2 --no-progress
+          - travis_retry composer create-project nette/coding-standard temp/coding-standard ^3 --no-progress
         script:
-          - php temp/coding-standard/ecs check src tests --config temp/coding-standard/coding-standard-php71.yml
+          - php temp/coding-standard/ecs check src tests --preset php74
 
 
     -   stage: Static Analysis (informative)
@@ -32,4 +30,4 @@ jobs:
           - travis_retry composer create-project phpstan/phpstan-shim temp/phpstan --no-progress
           - travis_retry composer install --no-progress --prefer-dist
         script:
-          - php temp/phpstan/phpstan.phar analyse --autoload-file vendor/autoload.php --level 7 src
+          - php temp/phpstan/phpstan.phar analyse src

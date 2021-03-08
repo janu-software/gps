@@ -1,43 +1,48 @@
 {
-	"name": "stanislav-janu/gps",
-	"description": "GPS extension for nette",
-	"homepage": "https://lweb.cz",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Stanislav Janů",
-			"homepage": "http://lweb.cz"
-		}
-	],
-	"require": {
-		"php": ">=7.1.0",
-		"nette/utils": "^2.4"
-	},
-	"require-dev": {
-		"stanislav-janu/phpstan": "^0.11",
-		"nette/tester": "^2.1"
-	},
-	"conflict": {
-		"nette/nette": "<2.3"
-	},
-	"scripts": {
-		"t": "vendor/bin/tester tests",
-		"sa": "vendor/bin/phpstan analyse src -l 7",
-		"cs-t": "temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml",
-		"cs-f": "temp/nette-coding-standard/ecs check src tests --config temp/nette-coding-standard/coding-standard-php71.yml --fix"
-	},
-	"autoload": {
-		"classmap": ["src/"]
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"JCode\\Tests\\": "tests"
-		}
-	},
-	"minimum-stability": "stable",
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.0-dev"
-		}
-	}
+    "name": "stanislav-janu/gps",
+    "description": "GPS extension for nette",
+    "homepage": "https://lweb.cz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stanislav Janů",
+            "homepage": "http://lweb.cz"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "nette/utils": "^3.0"
+    },
+    "require-dev": {
+        "stanislav-janu/phpstan": "^0.12",
+        "nette/tester": "^2.3",
+        "rector/rector": "^0.9"
+    },
+    "conflict": {
+        "nette/utils": "<3.0"
+    },
+    "scripts": {
+        "t": "vendor/bin/tester tests",
+        "sa": "vendor/bin/phpstan analyse src",
+        "r": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
+        "r-f": "vendor/bin/rector process src --config rector.php --ansi",
+        "cs": "temp/nette-coding-standard/ecs check src tests --preset php74",
+        "cs-f": "temp/nette-coding-standard/ecs check src tests --preset php74 --fix"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JCode\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "minimum-stability": "stable"
 }
