@@ -21,6 +21,7 @@ jobs:
           - php temp/coding-standard/ecs check src tests --preset php74
 
 
-    -   stage: Static Analysis (informative)
+    -   name: Static Analysis
+        stage: Static Analysis (informative)
         script:
           - php vendor/bin/phpstan.phar analyse src
