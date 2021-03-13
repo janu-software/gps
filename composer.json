@@ -11,15 +11,12 @@
     ],
     "require": {
         "php": ">=8.0",
-        "nette/utils": "^3.0"
+        "nette/utils": ">=3.2"
     },
     "require-dev": {
         "stanislav-janu/phpstan": "^0.12",
         "nette/tester": "^2.3",
         "rector/rector": "^0.9"
-    },
-    "conflict": {
-        "nette/utils": "<3.0"
     },
     "scripts": {
         "t": "vendor/bin/tester tests",
