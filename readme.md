@@ -1,11 +1,11 @@
 # GPS
 GPS Point with useful detection and method.
 
-[![Build Status](https://travis-ci.org/stanislav-janu/gps.svg?branch=master)](https://travis-ci.org/stanislav-janu/translator)
-[![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/translator)
-[![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/translator)
-[![Latest Unstable Version](https://poser.pugx.org/stanislav-janu/gps/v/unstable)](https://packagist.org/packages/stanislav-janu/translator)
-[![License](https://poser.pugx.org/stanislav-janu/gps/license)](https://packagist.org/packages/stanislav-janu/translator)
+[![Build Status](https://travis-ci.org/stanislav-janu/gps.svg?branch=master)](https://travis-ci.org/stanislav-janu/gps)
+[![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/gps)
+[![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/gps)
+[![Latest Unstable Version](https://poser.pugx.org/stanislav-janu/gps/v/unstable)](https://packagist.org/packages/stanislav-janu/gps)
+[![License](https://poser.pugx.org/stanislav-janu/gps/license)](https://packagist.org/packages/stanislav-janu/gps)
 
 ## Installation
 
