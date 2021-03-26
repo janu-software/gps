@@ -27,9 +27,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 		SetList::CODE_QUALITY,
 		SetList::NETTE_CODE_QUALITY,
 		SetList::NETTE_UTILS_CODE_QUALITY,
-		SetList::NETTE_RETURN_TYPES,
-		SetList::NETTE_PARAM_TYPES,
-		SetList::NETTE_30,
+		SetList::NETTE_31,
 	]);
 
 	$parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_80);
