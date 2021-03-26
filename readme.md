@@ -1,7 +1,11 @@
 # GPS
 GPS Point with useful detection and method.
 
-[![Build Status](https://travis-ci.org/stanislav-janu/gps.svg?branch=master)](https://travis-ci.org/stanislav-janu/gps)
+[![Composer](https://github.com/stanislav-janu/gps/actions/workflows/composer.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/composer.yml)
+[![Code style](https://github.com/stanislav-janu/gps/actions/workflows/code_style.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/code_style.yml)
+[![Tester](https://github.com/stanislav-janu/gps/actions/workflows/tester.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/tester.yml)
+[![PhpStan](https://github.com/stanislav-janu/gps/actions/workflows/static_analysis.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/static_analysis.yml)
+
 [![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/gps)
 [![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/gps)
 [![Latest Unstable Version](https://poser.pugx.org/stanislav-janu/gps/v/unstable)](https://packagist.org/packages/stanislav-janu/gps)
