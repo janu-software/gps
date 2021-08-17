@@ -1,30 +1,31 @@
 {
     "name": "stanislav-janu/gps",
     "description": "GPS extension for nette",
-    "homepage": "https://lweb.cz",
+    "homepage": "https://janu.software",
     "license": "MIT",
     "authors": [
         {
             "name": "Stanislav Janů",
-            "homepage": "http://lweb.cz"
+            "homepage": "https://janu.software"
         }
     ],
     "require": {
         "php": ">=8.0",
-        "nette/utils": "^3.2"
+        "nette/utils": "^3 || ^4"
     },
     "require-dev": {
         "stanislav-janu/phpstan": "^0.12",
         "nette/tester": "^2.3",
-        "rector/rector": "^0.10"
+        "rector/rector": "^0.11"
     },
     "scripts": {
         "t": "vendor/bin/tester tests",
         "sa": "vendor/bin/phpstan analyse src",
         "r": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
         "r-f": "vendor/bin/rector process src --config rector.php --ansi",
-        "cs": "temp/nette-coding-standard/ecs check src tests --preset php74",
-        "cs-f": "temp/nette-coding-standard/ecs check src tests --preset php74 --fix"
+        "cs": "temp/nette-coding-standard/ecs check src tests --preset php80",
+        "cs-f": "temp/nette-coding-standard/ecs check src tests --preset php80 --fix",
+        "cs-i": "rm -rf temp/nette-coding-standard && composer create-project nette/coding-standard temp/nette-coding-standard"
     },
     "autoload": {
         "classmap": [
@@ -41,5 +42,5 @@
             "dev-master": "2.0-dev"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
