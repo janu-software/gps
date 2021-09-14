@@ -8,7 +8,6 @@ GPS Point with useful detection and method.
 
 [![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/gps)
 [![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/gps)
-[![Latest Unstable Version](https://poser.pugx.org/stanislav-janu/gps/v/unstable)](https://packagist.org/packages/stanislav-janu/gps)
 [![License](https://poser.pugx.org/stanislav-janu/gps/license)](https://packagist.org/packages/stanislav-janu/gps)
 
 ## Installation
