@@ -1,10 +1,10 @@
 # GPS
 GPS Point with useful detection and method.
 
-[![Composer](https://github.com/stanislav-janu/gps/actions/workflows/composer.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/composer.yml)
-[![Code style](https://github.com/stanislav-janu/gps/actions/workflows/code_style.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/code_style.yml)
-[![Tester](https://github.com/stanislav-janu/gps/actions/workflows/tester.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/tester.yml)
-[![PhpStan](https://github.com/stanislav-janu/gps/actions/workflows/static_analysis.yml/badge.svg)](https://github.com/stanislav-janu/gps/actions/workflows/static_analysis.yml)
+[![Composer](https://github.com/janu-software/gps/actions/workflows/composer.yml/badge.svg)](https://github.com/janu-software/gps/actions/workflows/composer.yml)
+[![Code style](https://github.com/janu-software/gps/actions/workflows/code_style.yml/badge.svg)](https://github.com/janu-software/gps/actions/workflows/code_style.yml)
+[![Tester](https://github.com/janu-software/gps/actions/workflows/tester.yml/badge.svg)](https://github.com/janu-software/gps/actions/workflows/tester.yml)
+[![PhpStan](https://github.com/janu-software/gps/actions/workflows/static_analysis.yml/badge.svg)](https://github.com/janu-software/gps/actions/workflows/static_analysis.yml)
 
 [![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/gps)
 [![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/gps)
@@ -14,6 +14,15 @@ GPS Point with useful detection and method.
 ## Installation
 
     composer require stanislav-janu/gps
+
+## Compatibility
+
+| Version | PHP    | Nette Utils |
+|---------|--------|-------------|
+| 1.0     | ^7.0   | ^2.4        |
+| 1.1     | ^7.1   | ^2.4 ^3.0   |
+| 2.0     | ^8.0   | ^3.0        |
+| 2.1     | ^8.0   | ^3.2        |
 
 ## Usage
 
