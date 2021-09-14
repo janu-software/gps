@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace JCode\GPS;
+namespace JanuSoftware\GPS;
 
 use Nette\Utils\DateTime;
 use Nette\Utils\FileSystem;

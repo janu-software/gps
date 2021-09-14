@@ -1,15 +1,16 @@
 <?php
 
 /**
- * This file is part of the GPS
- * Copyright (c) 2019 Stanislav Janů (https://www.lweb.cz)
+ * https://github.com/janu-software/gps
+ *
+ * Copyright (c) 2019 Stanislav Janů (https://janu.software)
  */
 
 declare(strict_types=1);
 
 require_once __DIR__ . '/bootstrap.php';
 
-use JCode\GPS\GpsPoint;
+use JanuSoftware\GPS\GpsPoint;
 use Tester\Assert;
 
 $object = GpsPoint::from('https://mapy.cz/zakladni?x=14.4423873&y=49.0505547&z=17&source=base&id=1701560');
