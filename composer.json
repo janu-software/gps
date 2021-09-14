@@ -20,7 +20,8 @@
     },
     "scripts": {
         "t": "vendor/bin/tester tests",
-        "sa": "vendor/bin/phpstan analyse src",
+        "sa": "vendor/bin/phpstan analyse",
+        "sap": "vendor/bin/phpstan analyse --pro",
         "r": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
         "r-f": "vendor/bin/rector process src --config rector.php --ansi",
         "cs": "temp/nette-coding-standard/ecs check src tests --preset php80",

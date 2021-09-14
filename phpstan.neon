@@ -1,7 +1,7 @@
 parameters:
 	level: max
 	paths:
-		- app
+		- src
 
 includes:
 	- vendor/phpstan/phpstan-nette/rules.neon
