@@ -27,12 +27,15 @@ GPS Point with useful detection and method.
 ## Usage
 
 ```php
+use JanuSoftware\GPS\GpsPoint;
+use JanuSoftware\GPS\GpsPointException;
+
 try {
-    $point = \JanuSoftware\GPS\GpsPoint::from('49°3\'6.630"N, 14°26\'7.763"E');
+    $point = GpsPoint::from('49°3\'6.630"N, 14°26\'7.763"E');
     echo $point; // 49.0518417, 14.4354897
     echo $point->lat; // 49.0518417
     echo $point->lng; // 14.4354897
-} catch (\JanuSoftware\GPS\GpsPointException $exception) {
+} catch (GpsPointException $exception) {
     echo $exception->getMessage();
 }
 ```
@@ -52,8 +55,8 @@ try {
 
 ### Distance
 ```php
-$point1 = \JanuSoftware\GPS\GpsPoint::from('some coordinates');
-$point2 = \JanuSoftware\GPS\GpsPoint::from('some coordinates');
+$point1 = GpsPoint::from('some coordinates');
+$point2 = GpsPoint::from('some coordinates');
 $distance =  $point1->distanceTo($point2); // distance in meters
 ```
 
