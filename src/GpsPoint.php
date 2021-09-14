@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * https://github.com/janu-software/gps
+ *
+ * Copyright (c) 2017 Stanislav Janů (https://janu.software)
+ */
+
 declare(strict_types=1);
 
 namespace JCode\GPS;
@@ -11,11 +18,6 @@ use Nette\Utils\Strings;
 use Stringable;
 
 
-/**
- * @property float $lat
- * @property float $lng
- * @property string|null $address
- */
 class GpsPoint implements Stringable
 {
 	public function __construct(
@@ -147,47 +149,11 @@ class GpsPoint implements Stringable
 
 		/**
 		 * @author Jakub Vrána
-		 * @link   http://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
+		 * @link   https://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
 		 */
 		return
 			acos(cos(deg2rad($this->lat)) * cos(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * cos(deg2rad($point->lng)) + cos(deg2rad($this->lat)) * sin(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * sin(deg2rad($point->lng)) + sin(deg2rad($this->lat)) * sin(deg2rad($point->lat)))
 			* 6372.795 // Great circle radius
 			* 1000; // km to m
-	}
-
-
-	/**
-	 * @deprecated Use distanceTo() method.
-	 */
-	public function getDistanceTo(self $point, string $google_api_key = null): float
-	{
-		return $this->distanceTo(...func_get_args());
-	}
-
-
-	/**
-	 * @deprecated Use $object->lat.
-	 */
-	public function getLat(): float
-	{
-		return $this->lat;
-	}
-
-
-	/**
-	 * @deprecated Use $object->lng.
-	 */
-	public function getLng(): float
-	{
-		return $this->lng;
-	}
-
-
-	/**
-	 * @deprecated Use $object->address.
-	 */
-	public function getAddress(): ?string
-	{
-		return $this->address;
 	}
 }
