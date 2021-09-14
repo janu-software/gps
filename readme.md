@@ -23,6 +23,7 @@ GPS Point with useful detection and method.
 | 1.1     | ^7.1   | ^2.4 ^3.0   |
 | 2.0     | ^8.0   | ^3.0        |
 | 2.1     | ^8.0   | ^3.2        |
+| 3.0-dev | ^8.0   | ^4.0        |
 
 ## Usage
 

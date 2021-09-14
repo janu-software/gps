@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=8.0",
-        "nette/utils": "^3 || ^4"
+        "nette/utils": "^4"
     },
     "require-dev": {
         "stanislav-janu/phpstan": "^0.12",
