@@ -190,4 +190,65 @@ class GpsPoint implements Stringable
 	{
 		return $this->address;
 	}
+
+
+	/**
+	 * @param array<mixed> $exif
+	 *
+	 * @throws GpsExifException
+	 */
+	public static function fromExifCoords(array $exif): self
+	{
+		$prefix = isset($exif['GPS:GPSLatitude']) ? 'GPS:' : '';
+
+		if (!isset($exif[$prefix . 'GPSLatitude'])) {
+			throw new GpsExifException('Missing parameter GPSLatitude.');
+		}
+		if (!isset($exif[$prefix . 'GPSLatitudeRef'])) {
+			throw new GpsExifException('Missing parameter GPSLatitudeRef.');
+		}
+		if (!isset($exif[$prefix . 'GPSLongitude'])) {
+			throw new GpsExifException('Missing parameter GPSLongitude.');
+		}
+		if (!isset($exif[$prefix . 'GPSLongitudeRef'])) {
+			throw new GpsExifException('Missing parameter GPSLongitudeRef.');
+		}
+
+		return new self(self::getGps($exif[$prefix . 'GPSLatitude'], $exif[$prefix . 'GPSLatitudeRef']), self::getGps($exif[$prefix . 'GPSLongitude'], $exif[$prefix . 'GPSLongitudeRef']));
+	}
+
+
+	/**
+	 * @param array<string>|float  $exifCoords
+	 */
+	private static function getGps(array|float $exifCoords, string $hemi): float
+	{
+		$flip = ($hemi == 'W' || $hemi == 'S') ? -1 : 1;
+		if (is_array($exifCoords)) {
+			$degrees = $exifCoords !== [] ? self::gps2Num($exifCoords[0]) : 0;
+			$minutes = count($exifCoords) > 1 ? self::gps2Num($exifCoords[1]) : 0;
+			$seconds = count($exifCoords) > 2 ? self::gps2Num($exifCoords[2]) : 0;
+
+			return round($flip * ($degrees + $minutes / 60 + $seconds / DateTime::HOUR), 7);
+		} else {
+			return round($flip * $exifCoords, 7);
+		}
+	}
+
+
+	private static function gps2Num(string $coordsPart): float
+	{
+		/** @var array<mixed> $parts */
+		$parts = explode('/', $coordsPart);
+
+		if ($parts === []) {
+			return 0.0;
+		}
+
+		if (count($parts) === 1) {
+			return (float) $parts[0];
+		}
+
+		return (float) $parts[0] / (float) $parts[1];
+	}
 }
