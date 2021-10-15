@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "d6f221090d5ec3cf3498c134a0ffd6fe51e941b3"
+                "reference": "75af0ff0bf4db0df8aa07ea07a94437d0291b631"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/d6f221090d5ec3cf3498c134a0ffd6fe51e941b3",
-                "reference": "d6f221090d5ec3cf3498c134a0ffd6fe51e941b3",
+                "url": "https://api.github.com/repos/nette/utils/zipball/75af0ff0bf4db0df8aa07ea07a94437d0291b631",
+                "reference": "75af0ff0bf4db0df8aa07ea07a94437d0291b631",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +90,7 @@
                 "issues": "https://github.com/nette/utils/issues",
                 "source": "https://github.com/nette/utils/tree/master"
             },
-            "time": "2021-09-14T09:05:44+00:00"
+            "time": "2021-10-11T10:51:26+00:00"
         }
     ],
     "packages-dev": [
@@ -404,12 +404,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "cdd58e83f290b6463265d62611b8152e044d3bfa"
+                "reference": "a31da29e2b37ebf593bd2084cd7c7b7a30b796c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/cdd58e83f290b6463265d62611b8152e044d3bfa",
-                "reference": "cdd58e83f290b6463265d62611b8152e044d3bfa",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/a31da29e2b37ebf593bd2084cd7c7b7a30b796c2",
+                "reference": "a31da29e2b37ebf593bd2084cd7c7b7a30b796c2",
                 "shasum": ""
             },
             "require": {
@@ -421,7 +421,9 @@
                 "phpstan/phpstan": "<=0.12.82",
                 "rector/rector-cakephp": "*",
                 "rector/rector-doctrine": "*",
+                "rector/rector-laravel": "*",
                 "rector/rector-nette": "*",
+                "rector/rector-phpoffice": "*",
                 "rector/rector-phpunit": "*",
                 "rector/rector-prefixed": "*",
                 "rector/rector-symfony": "*"
@@ -456,7 +458,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-14T05:51:11+00:00"
+            "time": "2021-10-14T20:26:27+00:00"
         },
         {
             "name": "stanislav-janu/phpstan",
