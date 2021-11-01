@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32d4cab882587c4ff86ec28898d978a3",
+    "content-hash": "d5c5829b9e6a8c743bac35309f7b5e0e",
     "packages": [
         {
             "name": "nette/utils",
@@ -704,7 +704,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0"
+        "php": ">=8.0 <8.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
