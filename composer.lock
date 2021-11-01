@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a051b63179681c13a7d80529bb37a1e",
+    "content-hash": "32d4cab882587c4ff86ec28898d978a3",
     "packages": [
         {
             "name": "nette/utils",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "75af0ff0bf4db0df8aa07ea07a94437d0291b631"
+                "reference": "6cd4758f7c59593b24fd6ec6549104c9f51fe59d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/75af0ff0bf4db0df8aa07ea07a94437d0291b631",
-                "reference": "75af0ff0bf4db0df8aa07ea07a94437d0291b631",
+                "url": "https://api.github.com/repos/nette/utils/zipball/6cd4758f7c59593b24fd6ec6549104c9f51fe59d",
+                "reference": "6cd4758f7c59593b24fd6ec6549104c9f51fe59d",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +90,7 @@
                 "issues": "https://github.com/nette/utils/issues",
                 "source": "https://github.com/nette/utils/tree/master"
             },
-            "time": "2021-10-11T10:51:26+00:00"
+            "time": "2021-10-27T13:05:13+00:00"
         }
     ],
     "packages-dev": [
@@ -400,16 +400,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "dev-main",
+            "version": "0.11.60",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "a31da29e2b37ebf593bd2084cd7c7b7a30b796c2"
+                "reference": "428f593818f8c50fe12c543e8c0a107f9bd899ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/a31da29e2b37ebf593bd2084cd7c7b7a30b796c2",
-                "reference": "a31da29e2b37ebf593bd2084cd7c7b7a30b796c2",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/428f593818f8c50fe12c543e8c0a107f9bd899ae",
+                "reference": "428f593818f8c50fe12c543e8c0a107f9bd899ae",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +428,6 @@
                 "rector/rector-prefixed": "*",
                 "rector/rector-symfony": "*"
             },
-            "default-branch": true,
             "bin": [
                 "bin/rector"
             ],
@@ -450,7 +449,7 @@
             "description": "Prefixed and PHP 7.1 downgraded version of rector/rector",
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/main"
+                "source": "https://github.com/rectorphp/rector/tree/0.11.60"
             },
             "funding": [
                 {
@@ -458,7 +457,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-14T20:26:27+00:00"
+            "time": "2021-10-20T13:08:22+00:00"
         },
         {
             "name": "stanislav-janu/phpstan",
