@@ -137,14 +137,16 @@ class GpsPoint implements Stringable
 	 */
 	public function distanceTo(self $point, string $google_api_key = null): float
 	{
-		try {
-			$url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' . str_replace(',', '.', (string) $this->lat) . ',' . str_replace(',', '.', (string) $this->lng) . '&destinations=' . str_replace(',', '.', (string) $point->lat) . ',' . str_replace(',', '.', (string) $point->lng) . '&key=' . $google_api_key;
-			$result = FileSystem::read($url);
-			$result = Json::decode($result);
-			if ($result->status === 'OK' && $result->rows[0]->elements[0]->status === 'OK') {
-				return (float) $result->rows[0]->elements[0]->distance->value;
+		if ($google_api_key !== null) {
+			try {
+				$url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' . str_replace(',', '.', (string) $this->lat) . ',' . str_replace(',', '.', (string) $this->lng) . '&destinations=' . str_replace(',', '.', (string) $point->lat) . ',' . str_replace(',', '.', (string) $point->lng) . '&key=' . $google_api_key;
+				$result = FileSystem::read($url);
+				$result = Json::decode($result);
+				if ($result->status === 'OK' && $result->rows[0]->elements[0]->status === 'OK') {
+					return (float) $result->rows[0]->elements[0]->distance->value;
+				}
+			} catch (JsonException) {
 			}
-		} catch (JsonException) {
 		}
 
 		/**
