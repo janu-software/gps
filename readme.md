@@ -9,6 +9,7 @@ GPS Point with useful detection and method.
 [![Latest Stable Version](https://poser.pugx.org/stanislav-janu/gps/v/stable)](https://packagist.org/packages/stanislav-janu/gps)
 [![Total Downloads](https://poser.pugx.org/stanislav-janu/gps/downloads)](https://packagist.org/packages/stanislav-janu/gps)
 [![License](https://poser.pugx.org/stanislav-janu/gps/license)](https://packagist.org/packages/stanislav-janu/gps)
+[![Coverage Status](https://coveralls.io/repos/github/janu-software/gps/badge.svg?branch=master)](https://coveralls.io/github/janu-software/gps?branch=master)
 
 ## Installation
 
