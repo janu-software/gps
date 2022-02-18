@@ -10,7 +10,9 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/bootstrap.php';
 
+use JanuSoftware\GPS\GpsExifException;
 use JanuSoftware\GPS\GpsPoint;
+use JanuSoftware\GPS\GpsPointException;
 use Tester\Assert;
 
 $object = GpsPoint::from('https://mapy.cz/zakladni?x=14.4423873&y=49.0505547&z=17&source=base&id=1701560');
@@ -40,3 +42,116 @@ foreach ($array as $value) {
 	Assert::true($diffLat <= 0.000001 && $diffLat >= -0.000001);
 	Assert::true($diffLng <= 0.000001 && $diffLng >= -0.000001);
 }
+
+Assert::exception(function () {
+	GpsPoint::from('abc');
+}, GpsPointException::class, 'Nothing detected in abc');
+
+Assert::same('49.0506117,14.4420556', (string) GpsPoint::from('49.0506117 14.4420556'));
+
+Assert::same(824.802139174179, GpsPoint::from('49.0506117 14.4420556')->distanceTo(GpsPoint::from('49.04347409974172, 14.445124035085259')));
+Assert::same(824.802139174179, GpsPoint::from('49.0506117 14.4420556')->distanceTo(GpsPoint::from('49.04347409974172, 14.445124035085259'), 'WRONG_API_KEY'));
+
+$object = GpsPoint::fromExifCoords([
+	'GPSLatitudeRef' => 'N',
+	'GPSLatitude' => [
+		'49/1',
+		'36991/1000',
+		'0/1',
+	],
+	'GPSLongitudeRef' => 'E',
+	'GPSLongitude' => [
+		'14/1',
+		'88376/10000',
+		'0/1',
+	],
+	'GPSAltitude' => '566/1',
+]);
+Assert::same(49.6165167, $object->lat);
+Assert::same(14.1472933, $object->lng);
+
+$object = GpsPoint::fromExifCoords([
+	'GPSLatitudeRef' => 'N',
+	'GPSLatitude' => [
+		'49',
+		'36991/1000',
+	],
+	'GPSLongitudeRef' => 'E',
+	'GPSLongitude' => [
+		'14',
+		'88376/10000',
+	],
+	'GPSAltitude' => '566/1',
+]);
+Assert::same(49.6165167, $object->lat);
+Assert::same(14.1472933, $object->lng);
+
+$object = GpsPoint::fromExifCoords([
+	'GPSLatitudeRef' => 'N',
+	'GPSLatitude' => 49.6165167,
+	'GPSLongitudeRef' => 'E',
+	'GPSLongitude' => 14.1472933,
+	'GPSAltitude' => '566/1',
+]);
+Assert::same(49.6165167, $object->lat);
+Assert::same(14.1472933, $object->lng);
+
+Assert::exception(function () {
+	GpsPoint::fromExifCoords([
+		'GPSLatitude' => [
+			'49/1',
+			'36991/1000',
+			'0/1',
+		],
+		'GPSLongitudeRef' => 'E',
+		'GPSLongitude' => [
+			'14/1',
+			'88376/10000',
+			'0/1',
+		],
+		'GPSAltitude' => '566/1',
+	]);
+}, GpsExifException::class, 'Missing parameter GPSLatitudeRef.');
+
+Assert::exception(function () {
+	GpsPoint::fromExifCoords([
+		'GPSLatitudeRef' => 'N',
+		'GPSLongitudeRef' => 'E',
+		'GPSLongitude' => [
+			'14/1',
+			'88376/10000',
+			'0/1',
+		],
+		'GPSAltitude' => '566/1',
+	]);
+}, GpsExifException::class, 'Missing parameter GPSLatitude.');
+
+Assert::exception(function () {
+	GpsPoint::fromExifCoords([
+		'GPSLatitudeRef' => 'N',
+		'GPSLatitude' => [
+			'49/1',
+			'36991/1000',
+			'0/1',
+		],
+		'GPSLongitude' => [
+			'14/1',
+			'88376/10000',
+			'0/1',
+		],
+		'GPSAltitude' => '566/1',
+	]);
+}, GpsExifException::class, 'Missing parameter GPSLongitudeRef.');
+
+Assert::exception(function () {
+	GpsPoint::fromExifCoords([
+		'GPSLatitudeRef' => 'N',
+		'GPSLatitude' => [
+			'49/1',
+			'36991/1000',
+			'0/1',
+		],
+		'GPSLongitudeRef' => 'E',
+		'GPSAltitude' => '566/1',
+	]);
+}, GpsExifException::class, 'Missing parameter GPSLongitude.');

@@ -187,7 +187,7 @@ class GpsPoint implements Stringable
 
 
 	/**
-	 * @param array<string>|float  $exifCoords
+	 * @param string[]|float  $exifCoords
 	 */
 	private static function getGps(array|float $exifCoords, string $hemi): float
 	{
@@ -206,12 +206,11 @@ class GpsPoint implements Stringable
 
 	private static function gps2Num(string $coordsPart): float
 	{
-		/** @var array<mixed> $parts */
-		$parts = explode('/', $coordsPart);
-
-		if ($parts === []) {
+		if (Strings::trim($coordsPart) === '') {
 			return 0.0;
 		}
+
+		$parts = explode('/', $coordsPart);
 
 		if (count($parts) === 1) {
 			return (float) $parts[0];
