@@ -54,7 +54,7 @@ class GpsPoint implements Stringable
 		 *     -47.338388,-0.990228
 		 *     -47.338388 -0.990228
 		 */
-		$match = Strings::match($string, '/^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)N?,?\s*?(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)E?$/');
+		$match = Strings::match($string, '#^(-?[1-8]?\d(?:\.\d{1,18})?|90(?:\.0{1,18})?)N?,?\s*?(-?(?:1[0-7]|[1-9])?\d(?:\.\d{1,18})?|180(?:\.0{1,18})?)E?$#');
 		if (is_array($match)) {
 			$lat = (float) ($match[1]);
 			$lng = (float) ($match[2]);
@@ -103,7 +103,7 @@ class GpsPoint implements Stringable
 		/**
 		 * Google maps URL
 		 */
-		$match = Strings::match($string, '/@([0-9\.]+),([0-9\.]+),([0-9z]+)/');
+		$match = Strings::match($string, '#@([0-9\.]+),([0-9\.]+),([0-9z]+)#');
 		if (is_array($match)) {
 			$lat = (float) ($match[1]);
 			$lng = (float) ($match[2]);
@@ -114,7 +114,7 @@ class GpsPoint implements Stringable
 		/**
 		 * Mapy.cz URL
 		 */
-		$match = Strings::match($string, '/x=([0-9\.]+)&y=([0-9\.]+)&z=(\d+)/');
+		$match = Strings::match($string, '#x=([0-9\.]+)&y=([0-9\.]+)&z=(\d+)#');
 		if (is_array($match)) {
 			$lat = (float) ($match[2]);
 			$lng = (float) ($match[1]);
@@ -172,12 +172,15 @@ class GpsPoint implements Stringable
 		if (!isset($exif[$prefix . 'GPSLatitude'])) {
 			throw new GpsExifException('Missing parameter GPSLatitude.');
 		}
+
 		if (!isset($exif[$prefix . 'GPSLatitudeRef'])) {
 			throw new GpsExifException('Missing parameter GPSLatitudeRef.');
 		}
+
 		if (!isset($exif[$prefix . 'GPSLongitude'])) {
 			throw new GpsExifException('Missing parameter GPSLongitude.');
 		}
+
 		if (!isset($exif[$prefix . 'GPSLongitudeRef'])) {
 			throw new GpsExifException('Missing parameter GPSLongitudeRef.');
 		}

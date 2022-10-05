@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13efa11bc8e1abb2f874a838b7097e77",
+    "content-hash": "f169d41391873aeb356975d189fec8a7",
     "packages": [
         {
             "name": "nette/utils",
@@ -12,16 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "e86fe5f00e31199f50cf1630f900d6772d3888db"
+                "reference": "d44ce77b013e740d2fe008347acc5d0d4eb5224d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/e86fe5f00e31199f50cf1630f900d6772d3888db",
-                "reference": "e86fe5f00e31199f50cf1630f900d6772d3888db",
+                "url": "https://api.github.com/repos/nette/utils/zipball/d44ce77b013e740d2fe008347acc5d0d4eb5224d",
+                "reference": "d44ce77b013e740d2fe008347acc5d0d4eb5224d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0 <8.2"
+                "php": ">=8.0 <8.3"
             },
             "conflict": {
                 "nette/di": "<3.0.6"
@@ -90,7 +90,7 @@
                 "issues": "https://github.com/nette/utils/issues",
                 "source": "https://github.com/nette/utils/tree/master"
             },
-            "time": "2022-01-10T17:25:07+00:00"
+            "time": "2022-09-12T23:36:53+00:00"
         }
     ],
     "packages-dev": [
@@ -100,16 +100,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tester.git",
-                "reference": "f0813777cc0417c6ff8433776d13a01be74422c5"
+                "reference": "fdb8934bae99f9aa11e745b47192147c55e66b78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tester/zipball/f0813777cc0417c6ff8433776d13a01be74422c5",
-                "reference": "f0813777cc0417c6ff8433776d13a01be74422c5",
+                "url": "https://api.github.com/repos/nette/tester/zipball/fdb8934bae99f9aa11e745b47192147c55e66b78",
+                "reference": "fdb8934bae99f9aa11e745b47192147c55e66b78",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2 <8.2"
+                "php": ">=8.0 <8.3"
             },
             "require-dev": {
                 "ext-simplexml": "*",
@@ -122,7 +122,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -168,24 +168,24 @@
                 "issues": "https://github.com/nette/tester/issues",
                 "source": "https://github.com/nette/tester/tree/master"
             },
-            "time": "2021-12-12T17:32:54+00:00"
+            "time": "2022-10-04T12:17:26+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "dev-master",
+            "version": "1.9.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "f9b9d8c50df7db1b19bcad5a20e50851fe755fa1"
+                "reference": "3d37d57497ce3dfc84e3f106b9a304c28f0996a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f9b9d8c50df7db1b19bcad5a20e50851fe755fa1",
-                "reference": "f9b9d8c50df7db1b19bcad5a20e50851fe755fa1",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3d37d57497ce3dfc84e3f106b9a304c28f0996a0",
+                "reference": "3d37d57497ce3dfc84e3f106b9a304c28f0996a0",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.2|^8.0"
             },
             "conflict": {
                 "phpstan/phpstan-shim": "*"
@@ -196,11 +196,6 @@
                 "phpstan.phar"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -211,9 +206,13 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/master"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.x"
             },
             "funding": [
                 {
@@ -225,33 +224,29 @@
                     "type": "github"
                 },
                 {
-                    "url": "https://www.patreon.com/phpstan",
-                    "type": "patreon"
-                },
-                {
                     "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-11T09:35:09+00:00"
+            "time": "2022-10-05T14:18:57+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
-            "version": "dev-master",
+            "version": "1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-deprecation-rules.git",
-                "reference": "fb17fd1bd448120411f1a23453f816a2f4c4a435"
+                "reference": "763fe3e19c61674ea878187ac4066334fa71bcba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/fb17fd1bd448120411f1a23453f816a2f4c4a435",
-                "reference": "fb17fd1bd448120411f1a23453f816a2f4c4a435",
+                "url": "https://api.github.com/repos/phpstan/phpstan-deprecation-rules/zipball/763fe3e19c61674ea878187ac4066334fa71bcba",
+                "reference": "763fe3e19c61674ea878187ac4066334fa71bcba",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0",
-                "phpstan/phpstan": "^1.3"
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.5"
             },
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.2",
@@ -262,9 +257,6 @@
             "default-branch": true,
             "type": "phpstan-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "rules.neon"
@@ -283,27 +275,27 @@
             "description": "PHPStan rules for detecting usage of deprecated classes, methods, properties, constants and traits.",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-deprecation-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/master"
+                "source": "https://github.com/phpstan/phpstan-deprecation-rules/tree/1.1.x"
             },
-            "time": "2022-01-06T12:49:01+00:00"
+            "time": "2022-07-19T11:13:39+00:00"
         },
         {
             "name": "phpstan/phpstan-nette",
-            "version": "dev-master",
+            "version": "1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-nette.git",
-                "reference": "aff8ab9de20b401c4730459b4fc16a81ebdf65c6"
+                "reference": "8dddb884521d282b85af7d4a8221e21827df426a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-nette/zipball/aff8ab9de20b401c4730459b4fc16a81ebdf65c6",
-                "reference": "aff8ab9de20b401c4730459b4fc16a81ebdf65c6",
+                "url": "https://api.github.com/repos/phpstan/phpstan-nette/zipball/8dddb884521d282b85af7d4a8221e21827df426a",
+                "reference": "8dddb884521d282b85af7d4a8221e21827df426a",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0",
-                "phpstan/phpstan": "^1.3"
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.7"
             },
             "conflict": {
                 "nette/application": "<2.3.0",
@@ -326,9 +318,6 @@
             "default-branch": true,
             "type": "phpstan-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "extension.neon",
@@ -348,27 +337,27 @@
             "description": "Nette Framework class reflection extension for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-nette/issues",
-                "source": "https://github.com/phpstan/phpstan-nette/tree/master"
+                "source": "https://github.com/phpstan/phpstan-nette/tree/1.1.0"
             },
-            "time": "2022-01-06T12:49:08+00:00"
+            "time": "2022-09-21T14:29:42+00:00"
         },
         {
             "name": "phpstan/phpstan-strict-rules",
-            "version": "dev-master",
+            "version": "1.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-strict-rules.git",
-                "reference": "3468390c72c1d9094c1059350f793378df2d1ed7"
+                "reference": "00dd4fad4671a56c985847b2c8b5ce6c28665488"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/3468390c72c1d9094c1059350f793378df2d1ed7",
-                "reference": "3468390c72c1d9094c1059350f793378df2d1ed7",
+                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/00dd4fad4671a56c985847b2c8b5ce6c28665488",
+                "reference": "00dd4fad4671a56c985847b2c8b5ce6c28665488",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 || ^8.0",
-                "phpstan/phpstan": "^1.2.0"
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.9.0"
             },
             "require-dev": {
                 "nikic/php-parser": "^4.13.0",
@@ -379,9 +368,6 @@
             "default-branch": true,
             "type": "phpstan-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                },
                 "phpstan": {
                     "includes": [
                         "rules.neon"
@@ -400,9 +386,9 @@
             "description": "Extra strict and opinionated rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-strict-rules/issues",
-                "source": "https://github.com/phpstan/phpstan-strict-rules/tree/master"
+                "source": "https://github.com/phpstan/phpstan-strict-rules/tree/1.4.x"
             },
-            "time": "2022-01-06T12:35:54+00:00"
+            "time": "2022-10-03T13:24:24+00:00"
         },
         {
             "name": "rector/rector",
@@ -410,27 +396,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "a5aef684ff59bc48be5a7f909241638c9c3a8275"
+                "reference": "edf629072144052322ebf2d88d2073cbbfaa5db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/a5aef684ff59bc48be5a7f909241638c9c3a8275",
-                "reference": "a5aef684ff59bc48be5a7f909241638c9c3a8275",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/edf629072144052322ebf2d88d2073cbbfaa5db8",
+                "reference": "edf629072144052322ebf2d88d2073cbbfaa5db8",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0",
-                "phpstan/phpstan": "^1.3"
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.8.7"
             },
             "conflict": {
-                "phpstan/phpdoc-parser": "<1.2",
-                "rector/rector-cakephp": "*",
                 "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
                 "rector/rector-laravel": "*",
-                "rector/rector-nette": "*",
+                "rector/rector-php-parser": "*",
                 "rector/rector-phpoffice": "*",
                 "rector/rector-phpunit": "*",
-                "rector/rector-prefixed": "*",
                 "rector/rector-symfony": "*"
             },
             "default-branch": true,
@@ -440,7 +424,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.12-dev"
+                    "dev-main": "0.14-dev"
                 }
             },
             "autoload": {
@@ -452,7 +436,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Prefixed and PHP 7.1 downgraded version of rector/rector",
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
                 "source": "https://github.com/rectorphp/rector/tree/main"
@@ -463,7 +447,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-10T00:03:45+00:00"
+            "time": "2022-10-05T09:16:10+00:00"
         },
         {
             "name": "stanislav-janu/phpstan",
@@ -508,29 +492,28 @@
         },
         {
             "name": "thecodingmachine/phpstan-safe-rule",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/phpstan-safe-rule.git",
-                "reference": "71bd8c11aee95a79d2cf3f03200d38605bde2930"
+                "reference": "8a7b88e0d54f209a488095085f183e9174c40e1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/phpstan-safe-rule/zipball/71bd8c11aee95a79d2cf3f03200d38605bde2930",
-                "reference": "71bd8c11aee95a79d2cf3f03200d38605bde2930",
+                "url": "https://api.github.com/repos/thecodingmachine/phpstan-safe-rule/zipball/8a7b88e0d54f209a488095085f183e9174c40e1e",
+                "reference": "8a7b88e0d54f209a488095085f183e9174c40e1e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
                 "phpstan/phpstan": "^1.0",
-                "thecodingmachine/safe": "^1.0"
+                "thecodingmachine/safe": "^1.0 || ^2.0"
             },
             "require-dev": {
                 "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpunit": "^7.5.2",
+                "phpunit/phpunit": "^7.5.2 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "default-branch": true,
             "type": "phpstan-extension",
             "extra": {
                 "branch-alias": {
@@ -560,52 +543,52 @@
             "description": "A PHPStan rule to detect safety issues. Must be used in conjunction with thecodingmachine/safe",
             "support": {
                 "issues": "https://github.com/thecodingmachine/phpstan-safe-rule/issues",
-                "source": "https://github.com/thecodingmachine/phpstan-safe-rule/tree/v1.1.0"
+                "source": "https://github.com/thecodingmachine/phpstan-safe-rule/tree/v1.2.0"
             },
-            "time": "2021-11-17T11:21:46+00:00"
+            "time": "2022-01-17T10:12:29+00:00"
         },
         {
             "name": "thecodingmachine/safe",
-            "version": "1.x-dev",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "194bf34f635a82d3acd5a88c833f9ca4507f86f6"
+                "reference": "b141ff557fafcd00a475298883e567fc06bd95dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/194bf34f635a82d3acd5a88c833f9ca4507f86f6",
-                "reference": "194bf34f635a82d3acd5a88c833f9ca4507f86f6",
+                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/b141ff557fafcd00a475298883e567fc06bd95dd",
+                "reference": "b141ff557fafcd00a475298883e567fc06bd95dd",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": "^8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan": "^1.5",
+                "phpunit/phpunit": "^9.5",
                 "squizlabs/php_codesniffer": "^3.2",
-                "thecodingmachine/phpstan-strict-rules": "^0.12"
+                "thecodingmachine/phpstan-strict-rules": "^1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.1-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Safe\\": [
-                        "lib/",
-                        "deprecated/",
-                        "generated/"
-                    ]
-                },
                 "files": [
                     "deprecated/apc.php",
+                    "deprecated/array.php",
+                    "deprecated/datetime.php",
                     "deprecated/libevent.php",
+                    "deprecated/misc.php",
+                    "deprecated/password.php",
                     "deprecated/mssql.php",
                     "deprecated/stats.php",
+                    "deprecated/strings.php",
                     "lib/special_cases.php",
+                    "deprecated/mysqli.php",
                     "generated/apache.php",
                     "generated/apcu.php",
                     "generated/array.php",
@@ -626,6 +609,7 @@
                     "generated/fpm.php",
                     "generated/ftp.php",
                     "generated/funchand.php",
+                    "generated/gettext.php",
                     "generated/gmp.php",
                     "generated/gnupg.php",
                     "generated/hash.php",
@@ -635,7 +619,6 @@
                     "generated/image.php",
                     "generated/imap.php",
                     "generated/info.php",
-                    "generated/ingres-ii.php",
                     "generated/inotify.php",
                     "generated/json.php",
                     "generated/ldap.php",
@@ -644,20 +627,14 @@
                     "generated/mailparse.php",
                     "generated/mbstring.php",
                     "generated/misc.php",
-                    "generated/msql.php",
                     "generated/mysql.php",
-                    "generated/mysqli.php",
-                    "generated/mysqlndMs.php",
-                    "generated/mysqlndQc.php",
                     "generated/network.php",
                     "generated/oci8.php",
                     "generated/opcache.php",
                     "generated/openssl.php",
                     "generated/outcontrol.php",
-                    "generated/password.php",
                     "generated/pcntl.php",
                     "generated/pcre.php",
-                    "generated/pdf.php",
                     "generated/pgsql.php",
                     "generated/posix.php",
                     "generated/ps.php",
@@ -668,7 +645,6 @@
                     "generated/sem.php",
                     "generated/session.php",
                     "generated/shmop.php",
-                    "generated/simplexml.php",
                     "generated/sockets.php",
                     "generated/sodium.php",
                     "generated/solr.php",
@@ -690,6 +666,13 @@
                     "generated/yaz.php",
                     "generated/zip.php",
                     "generated/zlib.php"
+                ],
+                "classmap": [
+                    "lib/DateTime.php",
+                    "lib/DateTimeImmutable.php",
+                    "lib/Exceptions/",
+                    "deprecated/Exceptions/",
+                    "generated/Exceptions/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -699,21 +682,19 @@
             "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
             "support": {
                 "issues": "https://github.com/thecodingmachine/safe/issues",
-                "source": "https://github.com/thecodingmachine/safe/tree/1.x"
+                "source": "https://github.com/thecodingmachine/safe/tree/v2.3.1"
             },
-            "time": "2022-01-03T15:01:15+00:00"
+            "time": "2022-09-20T12:01:26+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "nette/utils": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.0 <8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -11,19 +11,19 @@
     ],
     "require": {
         "php": ">=8.0 <8.2",
-        "nette/utils": "dev-master"
+        "nette/utils": "^3.0 | ^4.0"
     },
     "require-dev": {
         "stanislav-janu/phpstan": "^1.0",
         "nette/tester": "^2.4",
-        "rector/rector": "^0.12"
+        "rector/rector": "^0.14"
     },
     "scripts": {
         "t": "vendor/bin/tester tests",
         "sa": "vendor/bin/phpstan analyse",
         "sap": "vendor/bin/phpstan analyse --pro",
-        "r": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
-        "r-f": "vendor/bin/rector process src --config rector.php --ansi",
+        "re": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
+        "re-f": "vendor/bin/rector process src --config rector.php --ansi",
         "cs": "temp/nette-coding-standard/ecs check src tests --preset php80",
         "cs-f": "temp/nette-coding-standard/ecs check src tests --preset php80 --fix",
         "cs-i": "rm -rf temp/nette-coding-standard && composer create-project nette/coding-standard temp/nette-coding-standard"
