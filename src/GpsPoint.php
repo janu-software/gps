@@ -150,11 +150,10 @@ class GpsPoint implements Stringable
 		}
 
 		/**
-		 * @author Jakub Vrána
+		 * Author  Jakub Vrána
 		 * @link   https://php.vrana.cz/vzdalenost-dvou-zemepisnych-bodu.php
 		 */
-		return
-			acos(cos(deg2rad($this->lat)) * cos(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * cos(deg2rad($point->lng)) + cos(deg2rad($this->lat)) * sin(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * sin(deg2rad($point->lng)) + sin(deg2rad($this->lat)) * sin(deg2rad($point->lat)))
+		return acos(cos(deg2rad($this->lat)) * cos(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * cos(deg2rad($point->lng)) + cos(deg2rad($this->lat)) * sin(deg2rad($this->lng)) * cos(deg2rad($point->lat)) * sin(deg2rad($point->lng)) + sin(deg2rad($this->lat)) * sin(deg2rad($point->lat)))
 			* 6372.795 // Great circle radius
 			* 1000; // km to m
 	}
