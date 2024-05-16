@@ -194,7 +194,7 @@ class GpsPoint implements Stringable
 	 */
 	private static function getGps(array|float $exifCoords, string $hemi): float
 	{
-		$flip = ($hemi == 'W' || $hemi == 'S') ? -1 : 1;
+		$flip = ($hemi === 'W' || $hemi === 'S') ? -1 : 1;
 		if (is_array($exifCoords)) {
 			$degrees = $exifCoords !== [] ? self::gps2Num($exifCoords[0]) : 0;
 			$minutes = count($exifCoords) > 1 ? self::gps2Num($exifCoords[1]) : 0;
