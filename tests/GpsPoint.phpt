@@ -19,9 +19,21 @@ $object = GpsPoint::from('https://mapy.cz/zakladni?x=14.4423873&y=49.0505547&z=1
 Assert::same(49.0505547, $object->lat);
 Assert::same(14.4423873, $object->lng);
 
+$object = GpsPoint::from('https://mapy.com/cs/zakladni?source=firm&id=2432424&x=14.4423873&y=49.0505547&z=17');
+Assert::same(49.0505547, $object->lat);
+Assert::same(14.4423873, $object->lng);
+
 $object = GpsPoint::from('https://www.google.cz/maps/place/St%C3%A1tn%C3%AD+z%C3%A1mek+Hlubok%C3%A1/@49.0545128,14.433819,16z/data=!4m5!3m4!1s0x4773524ae3e57e19:0xcf9370935230ff40!8m2!3d49.0511241!4d14.441594');
 Assert::same(49.0545128, $object->lat);
 Assert::same(14.433819, $object->lng);
+
+$object = GpsPoint::from('https://www.openstreetmap.org/search?lat=49.050850&lon=14.441512&zoom=18#map=18/49.050901/14.441534');
+Assert::same(49.050850, $object->lat);
+Assert::same(14.441512, $object->lng);
+
+$object = GpsPoint::from('https://www.openstreetmap.org/relation/444348#map=18/49.050897/14.441507');
+Assert::same(49.050897, $object->lat);
+Assert::same(14.441507, $object->lng);
 
 $array = [
 	'49.0506117 14.4420556',

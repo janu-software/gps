@@ -19,6 +19,7 @@ GPS Point with useful detection and method.
 
 | Version | PHP  | Nette Utils |
 |---------|------|-------------|
+| 4.0     | ^8.3 | ^4.0        |
 | 3.0     | ^8.0 | ^4.0        |
 | 2.1     | ^8.0 | ^3.2        |
 | 2.0     | ^8.0 | ^3.0        |
@@ -42,8 +43,9 @@ try {
 ```
 
 ### Accepted formats:
-* Google maps URL
-* Mapy.cz URL
+* OpenStreetMap URL
+* Google Maps URL
+* Mapy.com URL
 * 49°3'6.630"N, 14°26'7.763"E
 * N 49°3.11050', E 14°26.12938'
 * 49.0518417N, 14.4354897E

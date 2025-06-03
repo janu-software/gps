@@ -40,8 +40,9 @@ class GpsPoint implements Stringable
 	 *     -47.338388 -0.990228
 	 *     49°3'6.630"N, 14°26'7.763"E
 	 *     N 49°3.11050', E 14°26.12938'
-	 *     Google maps URL
-	 *     Mapy.cz URL
+	 *     OpenStreetMap URL
+	 *     Google Maps URL
+	 *     Mapy.com URL
 	 */
 	public static function from(string $string): self
 	{
@@ -87,7 +88,7 @@ class GpsPoint implements Stringable
 		 *     N 49°3.11050', E 14°26.12938'
 		 */
 		$match = Strings::match($string, '/^N?\s?([0-8]?\d|90)°\s?(\d+(?:\.\d{1,5})\'),?\s?E?\s?(1[0-7]?\d|180)°\s?(\d+(?:\.\d{1,5})\')$/');
-		if (is_array($match) && count($match) === 5) {
+		if (is_array($match)) {
 			$latDeg = (int) ($match[1]);
 			$latMin = (float) ($match[2]);
 
@@ -98,6 +99,25 @@ class GpsPoint implements Stringable
 			$lng = $lngDeg + ($lngMin * 60 / DateTime::HOUR);
 
 			return new self(round($lat, 7), round($lng, 7));
+		}
+
+		/**
+		 * OpenStreetMap URL
+		 */
+		$match = Strings::match($string, '#lat=([0-9\.]+)&lon=([0-9\.]+)#');
+		if (is_array($match)) {
+			$lat = (float) ($match[1]);
+			$lng = (float) ($match[2]);
+
+			return new self($lat, $lng);
+		}
+
+		$match = Strings::match($string, '#/([0-9\.]+)/([0-9\.]+)#');
+		if (is_array($match)) {
+			$lat = (float) ($match[1]);
+			$lng = (float) ($match[2]);
+
+			return new self($lat, $lng);
 		}
 
 		/**
@@ -112,7 +132,7 @@ class GpsPoint implements Stringable
 		}
 
 		/**
-		 * Mapy.cz URL
+		 * Mapy.com URL
 		 */
 		$match = Strings::match($string, '#x=([0-9\.]+)&y=([0-9\.]+)&z=(\d+)#');
 		if (is_array($match)) {

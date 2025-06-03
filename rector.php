@@ -17,7 +17,9 @@ return static function (RectorConfig $rectorConfig): void {
 	$rectorConfig->cacheDirectory(__DIR__ . '/temp/rector');
 
 	// Define what rule sets will be applied
-	$rectorConfig->import(LevelSetList::UP_TO_PHP_80);
+	$rectorConfig->import(LevelSetList::UP_TO_PHP_83);
 	$rectorConfig->import(SetList::CODE_QUALITY);
 	$rectorConfig->import(SetList::CODING_STYLE);
+	$rectorConfig->import(SetList::TYPE_DECLARATION);
+	$rectorConfig->import(SetList::STRICT_BOOLEANS);
 };

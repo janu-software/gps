@@ -10,13 +10,13 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.3",
         "nette/utils": "^4.0"
     },
     "require-dev": {
-        "stanislav-janu/phpstan": "^1.0",
+        "stanislav-janu/phpstan": "^2.0",
         "nette/tester": "^2.5",
-        "rector/rector": "^1.0"
+        "rector/rector": "^2.0"
     },
     "scripts": {
         "t": "vendor/bin/tester tests",
@@ -24,9 +24,9 @@
         "sap": "vendor/bin/phpstan analyse --pro",
         "re": "vendor/bin/rector process src --config rector.php --dry-run --ansi",
         "re-f": "vendor/bin/rector process src --config rector.php --ansi",
-        "cs": "temp/nette-coding-standard/ecs check src tests --preset php80",
-        "cs-f": "temp/nette-coding-standard/ecs check src tests --preset php80 --fix",
-        "cs-i": "rm -rf temp/nette-coding-standard && composer create-project nette/coding-standard temp/nette-coding-standard"
+        "cs": "temp/nette-coding-standard/ecs check src tests --preset project",
+        "cs-f": "temp/nette-coding-standard/ecs check src tests --preset project --fix",
+        "cs-i": "rm -rf temp/nette-coding-standard && composer create-project janu-software/coding-standard temp/nette-coding-standard && cp ./.coding-standard/project.xml ./temp/nette-coding-standard/preset-sniffer/project.xml && cp ./.coding-standard/project.php ./temp/nette-coding-standard/preset-fixer/project.php"
     },
     "autoload": {
         "classmap": [
@@ -40,8 +40,13 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0-dev"
+            "dev-master": "4.0-dev"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "config": {
+        "platform": {
+            "php": "8.3"
+        }
+    }
 }
