@@ -155,7 +155,7 @@ class GpsPoint implements Stringable
 	/**
 	 * Return float in meters
 	 */
-	public function distanceTo(self $point, string $google_api_key = null): float
+	public function distanceTo(self $point, ?string $google_api_key = null): float
 	{
 		if ($google_api_key !== null) {
 			try {
